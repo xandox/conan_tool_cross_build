@@ -3,6 +3,7 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout
 from conan import tools
 
+
 class ToolAndLibPackage(ConanFile):
     name = "example"
     version = "1.0.0"
@@ -16,6 +17,8 @@ class ToolAndLibPackage(ConanFile):
 
     def requirements(self):
         self.requires("zlib/1.2.13")
+        self.requires("spdlog/1.11.0")
+        self.requires("flatbuffers/22.11.23")
 
     def layout(self):
         cmake_layout(self)
